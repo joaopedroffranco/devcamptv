@@ -1,16 +1,22 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-
-import Videos from '../videos/videos';
-import Player from '../player/player';
+import Home from '../home/home';
 
 class Router extends React.Component {
+	constructor() {
+		super();
+		if (window.location.pathname === '/') {
+			window.location.pathname = '/home'
+		}
+	}
+
 	render() {
 		return (
-			<Switch>
-				<Route exact path="/videos" component={Videos} />
-				<Route exact path="/player" component={Player} />
-			</Switch>
+			<div>
+				<Switch>
+					<Route exact path="/home" component={Home} />
+				</Switch>
+			</div>
 		);
 	}
 }
