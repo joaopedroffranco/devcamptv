@@ -1,13 +1,23 @@
 import React from 'react';
+import './style.css';
 
 class Device extends React.Component {
+    toggle(device) {
+        console.log(device);
+    }
+
 	render() {
-        const { device } = this.props;
+        const { device, getref } = this.props;
         const { id, name } = device;
 		return (
-            <div>
-                <p>id</p>
-			    <a href='www.google.com.br'>name</a>
+            <div className="device-container">
+                <p>{id}</p>
+			    <button
+                    ref={getref}
+                    className="device-button"
+                    onClick={() => { this.toggle(device); }}
+                >{name}
+                </button>
             </div>
 		);
 	}

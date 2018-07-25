@@ -17,9 +17,19 @@ class Devices extends React.Component {
         this.fetchDevices();
     }
 
+    componentWillUpdate() {
+        const { devices } = this.state;
+        this.devicesRefs = Array(devices.length);
+    }
+
+    componentDidUpdate() {
+        const { updateNavigation } = this.props;
+        updateNavigation();
+    }
+
     fetchDevices() {
         this.devicesInteractor.get((devices) => {
-            this.setState(() => {
+            this.setState({
                 devices: devices
             });
         }, (error) => {
@@ -31,7 +41,13 @@ class Devices extends React.Component {
         const { devices } = this.state;
 		return (
 			<div>
-                {devices.map((device, index) => <Device key={index} device={device}/>)}
+                {devices.map((device, index) =>
+                    <Device
+                        getref={(ref) => this.devicesRefs[index] = ref}
+                        key={index}
+                        device={device}
+                    />
+                )}
 			</div>
 		);
 	}

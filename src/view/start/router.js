@@ -1,20 +1,14 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from '../home/home';
+import Init from './init';
+
 
 class Router extends React.Component {
-	constructor() {
-		super();
-		if (window.location.pathname === '/') {
-			window.location.pathname = '/home'
-		}
-	}
-
 	render() {
 		return (
 			<div>
 				<Switch>
-					<Route exact path="/home" component={Home} />
+					<Route path="/:device" component={Init} />
 				</Switch>
 			</div>
 		);

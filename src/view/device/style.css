@@ -1,0 +1,19 @@
+.device-container {
+    margin: 10px;
+    padding-top: 10px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.device-container:focus-within {
+    background-color: rgb(221, 159, 43);
+}
+
+.device-button {
+    border: none;
+}
+
+.device-button:focus {
+    background-color: rgb(111, 172, 192);
+}
