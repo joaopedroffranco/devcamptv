@@ -25,12 +25,12 @@ class Navigation {
         this.type.update(elements);
     }
 
-	isValid(keycode) {
-        return Object.values(this.controls).find((e) => e === keycode);
-    }
-
     focus() {
         this.type.focus();
+    }
+
+    isValid(keycode) {
+        return Object.values(this.controls).find((e) => e === keycode);
     }
     
     move(keycode) {
