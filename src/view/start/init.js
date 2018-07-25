@@ -1,9 +1,9 @@
 import React from 'react';
+import Navigation from 'startv/navigation/navigation';
+import Plataform from 'startv/tv/plataform';
 import ReactDOM from 'react-dom';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../home/home';
-import Navigation from '../../module/navigation/navigation';
-import Plataform from '../../module/tv/plataform';
 
 Navigation.findNode = ReactDOM.findDOMNode;
 Plataform.current = new Plataform();
