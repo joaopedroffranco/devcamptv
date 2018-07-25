@@ -25,12 +25,16 @@ class Navigation {
         this.type.update(elements);
     }
 
-	isValidKey(keycode) {
+	isValid(keycode) {
         return Object.values(this.controls).find((e) => e === keycode);
+    }
+
+    focus() {
+        this.type.focus();
     }
     
     move(keycode) {
-		if (this.type.hasElements()) {
+		if (this.type.hasElements() && this.isValid(keycode)) {
 			switch (keycode) {
 			case this.controls.left:
 				this.type.left();
@@ -50,7 +54,7 @@ class Navigation {
 				break;
 			default: break;
 			}
-			this.type.focus();
+			this.focus();
         }
     }
 }
