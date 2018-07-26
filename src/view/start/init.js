@@ -1,8 +1,8 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Navigation from 'startv/navigation/navigation';
 import Plataform from 'startv/tv/plataform';
 import ReactDOM from 'react-dom';
-import { Switch, Route } from 'react-router-dom';
 import Home from '../home/home';
 
 Navigation.findNode = ReactDOM.findDOMNode;
