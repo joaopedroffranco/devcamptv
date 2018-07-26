@@ -1,6 +1,6 @@
 .device-container {
-    background-color: rgb(121, 121, 111);
-    margin: 10px;
+    background-color: rgb(187, 187, 187);
+    margin: 30px;
     padding-top: 10px;
     width: 100px;
     height: 100px;
@@ -8,13 +8,17 @@
 }
 
 .device-container:focus-within {
-    background-color: rgb(221, 159, 43);
+    transform: scale(1.2);
 }
 
 .device-button {
     border: none;
 }
 
-.device-button:focus {
-    background-color: rgb(111, 172, 192);
+.on {
+    background-color: rgb(97, 141, 105);
+}
+
+.off {
+    background-color: rgb(145, 76, 87);
 }

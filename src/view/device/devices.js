@@ -5,8 +5,6 @@ import Device from './device';
 class Devices extends React.Component {
 	constructor() {
         super();
-        
-        this.devicesInteractor = new DevicesInteractor();
 
         this.state = {
             devices: []
@@ -28,12 +26,10 @@ class Devices extends React.Component {
     }
 
     fetchDevices() {
-        this.devicesInteractor.get((devices) => {
+        DevicesInteractor.get((devices) => {
             this.setState({
                 devices: devices
             });
-        }, (error) => {
-            console.error(error);
         });
     }
 
@@ -41,9 +37,9 @@ class Devices extends React.Component {
         const { devices } = this.state;
 		return (
 			<div>
-                {devices.map((device, index) =>
+                {devices && devices.map((device, index) =>
                     <Device
-                        getref={(ref) => this.devicesRefs[index] = ref}
+                        navigationref={(ref) => this.devicesRefs[index] = ref}
                         key={index}
                         device={device}
                     />

@@ -1,22 +1,29 @@
 import React from 'react';
+import DevicesInteractor from '../../data/interactor/devices';
 import './style.css';
 
 class Device extends React.Component {
-    toggle(device) {
-        console.log(device);
+    toggle() {
+        const { device } = this.props;
+        const { key, on } = device;
+        DevicesInteractor.set(key, !on);
     }
 
 	render() {
-        const { device, getref } = this.props;
-        const { id, name } = device;
+        const { device, navigationref } = this.props;
+        const { name, on } = device;
+
+        const buttonIsOn = on ? 'on' : 'off';
+        const buttonName = on ? 'Desligar' : 'Ligar'
+
 		return (
-            <div className="device-container">
-                <p>{id}</p>
+            <div className={`device-container ${buttonIsOn}`}>
+                <p>{name}</p>
 			    <button
-                    ref={getref}
+                    ref={navigationref}
                     className="device-button"
                     onClick={() => { this.toggle(device); }}
-                >{name}
+                >{buttonName}
                 </button>
             </div>
 		);
