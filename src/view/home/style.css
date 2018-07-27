@@ -1,0 +1,11 @@
+.home-container {
+    width: 100%;
+    text-align: center;
+}
+
+.home-container > p {
+    margin-top: 15%;
+    font-family: 'Raleway-Bold';
+    font-size: 70px;
+    color: #eb4505;
+}

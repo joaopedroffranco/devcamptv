@@ -1,6 +1,7 @@
 import React from 'react';
 import DevicesInteractor from '../../data/interactor/devices';
 import Device from './device';
+import '../../util/array';
 
 class Devices extends React.Component {
 	constructor() {
@@ -15,13 +16,15 @@ class Devices extends React.Component {
         this.fetchDevices();
     }
 
-    componentWillUpdate() {
-        const { devices } = this.state;
+    shouldComponentUpdate(props, state) {
+        const { devices } = state;
         this.devicesRefs = Array(devices.length);
+        return true;
     }
 
     componentDidUpdate() {
         const { updateNavigation } = this.props;
+        this.devicesRefs = this.devicesRefs.clean();
         updateNavigation();
     }
 
@@ -36,7 +39,7 @@ class Devices extends React.Component {
 	render() {
         const { devices } = this.state;
 		return (
-			<div>
+			<div className="devices-container">
                 {devices && devices.map((device, index) =>
                     <Device
                         navigationref={(ref) => this.devicesRefs[index] = ref}

@@ -3,6 +3,7 @@ import Plataform from '../../module/tv/plataform';
 import Navigation from '../../module/navigation/navigation';
 import Devices from '../device/devices';
 import Screen from '../screen';
+import './style.css';
 
 class Home extends Screen {
 	constructor() {
@@ -15,7 +16,7 @@ class Home extends Screen {
 	}
 
 	componentDidMount() {
-		Plataform.current.navigation.set(this.onReturn, this.onExit, Navigation.types.verticaltrack);
+		Plataform.current.navigation.set(this.onReturn, this.onExit, Navigation.types.horizontaltrack);
 	}
 
 	componentDidUpdate() {
@@ -26,12 +27,13 @@ class Home extends Screen {
 		if (this.devicesComponent) {
 			const elements = this.devicesComponent.current.devicesRefs;
 			Plataform.current.navigation.update([elements])
+			Plataform.current.navigation.focus();
 		}
 	}
 
 	render() {
 		return (
-			<div>
+			<div className="home-container">
 				<p>Olá, nós fazemos app para SmartTVs</p>
 				<Devices
 					ref={this.devicesComponent}
