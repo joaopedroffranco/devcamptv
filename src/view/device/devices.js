@@ -1,6 +1,7 @@
 import React from 'react';
 import DevicesInteractor from '../../data/interactor/devices';
 import Device from './device';
+import '../../util/array';
 
 class Devices extends React.Component {
 	constructor() {
@@ -23,7 +24,7 @@ class Devices extends React.Component {
 
     componentDidUpdate() {
         const { updateNavigation } = this.props;
-        this.devicesRefs = this.devicesRefs.filter((el) => { return el !== null })
+        this.devicesRefs = this.devicesRefs.clean();
         updateNavigation();
     }
 
