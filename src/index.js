@@ -5,6 +5,8 @@ import registerServiceWorker from './registerServiceWorker';
 import Router from './view/start/router';
 import './index.css';
 
+console.log('index');
+
 ReactDOM.render((
 	<BrowserRouter>
 		<Router />

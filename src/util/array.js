@@ -1,3 +1,4 @@
+/* eslint-disable */
 if (!Array.prototype.filter && false) {
 	Array.prototype.filter = function(fun/*, thisArg*/) {
 		'use strict';

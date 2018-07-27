@@ -39,7 +39,7 @@ class Devices extends React.Component {
 	render() {
         const { devices } = this.state;
 		return (
-			<div>
+			<div className="devices-container">
                 {devices && devices.map((device, index) =>
                     <Device
                         navigationref={(ref) => this.devicesRefs[index] = ref}
