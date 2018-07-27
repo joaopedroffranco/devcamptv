@@ -1,5 +1,5 @@
 import React from 'react';
-import Plataform from '../../module/tv/plataform';
+import Plataform from '../module/tv/plataform';
 
 class Screen extends React.Component {
 	constructor() {
