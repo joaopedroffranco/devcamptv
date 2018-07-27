@@ -10,10 +10,14 @@ class Track {
     }
     
     update(elements) {
+		console.log(elements);
 		this.groups = Array(elements.length);
 		this.parent = null;
 		elements.forEach((elementsGroup, index) => {
-			this.groups[index] = new Group(elementsGroup, this.index === index && this.startGroupIndex < elementsGroup.length ? this.startGroupIndex : 0, this.animated);
+			if (this.index === index) {
+				this.startGroupIndex = this.startGroupIndex < elementsGroup.length ? this.startGroupIndex : 0;
+			}
+			this.groups[index] = new Group(elementsGroup, this.index === index ? this.startGroupIndex : 0, this.animated);
 		});
 		this.index = this.index < elements.length ? this.index : 0;
     }
@@ -25,6 +29,8 @@ class Track {
 		} else {
 			this.previous();
 		}
+
+		this.startGroupIndex = (this.hasElements() && this.groups[this.index]) ? this.groups[this.index].index : 0;
 	}
 
 	down() {
@@ -34,6 +40,8 @@ class Track {
 		} else {
 			this.next();
 		}
+
+		this.startGroupIndex = (this.hasElements() && this.groups[this.index]) ? this.groups[this.index].index : 0;
 	}
 
 	left() {
@@ -43,6 +51,8 @@ class Track {
 			const group = this.groups[this.index];
 			group.previous();
 		}
+
+		this.startGroupIndex = (this.hasElements() && this.groups[this.index]) ? this.groups[this.index].index : 0;
 	}
 
 	right() {
@@ -52,6 +62,8 @@ class Track {
 			const group = this.groups[this.index];
 			group.next();
 		}
+
+		this.startGroupIndex = (this.hasElements() && this.groups[this.index]) ? this.groups[this.index].index : 0;
 	}
 
 	next() {
@@ -73,8 +85,6 @@ class Track {
 		if (currentDOM !== null) {
 			currentDOM.focus();
 		}
-
-		this.startGroupIndex = (this.hasElements() && this.groups[this.index]) ? this.groups[this.index].index : 0;
 	}
 
 	hasElements() {
