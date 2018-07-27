@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Navigation from 'startv/navigation/navigation';
-import Plataform from 'startv/tv/plataform';
+import Navigation from '../../module/navigation/navigation';
+import Plataform from '../../module/tv/plataform';
 import ReactDOM from 'react-dom';
 import Home from '../home/home';
 
