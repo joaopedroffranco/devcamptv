@@ -15,13 +15,15 @@ class Devices extends React.Component {
         this.fetchDevices();
     }
 
-    componentWillUpdate() {
-        const { devices } = this.state;
+    shouldComponentUpdate(props, state) {
+        const { devices } = state;
         this.devicesRefs = Array(devices.length);
+        return true;
     }
 
     componentDidUpdate() {
         const { updateNavigation } = this.props;
+        this.devicesRefs = this.devicesRefs.filter((el) => { return el !== null })
         updateNavigation();
     }
 

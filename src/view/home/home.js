@@ -26,6 +26,7 @@ class Home extends Screen {
 		if (this.devicesComponent) {
 			const elements = this.devicesComponent.current.devicesRefs;
 			Plataform.current.navigation.update([elements])
+			Plataform.current.navigation.focus();
 		}
 	}
 
