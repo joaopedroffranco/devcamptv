@@ -9,7 +9,7 @@
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "startv": "^1.0.3"
+    "startv": "^1.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
