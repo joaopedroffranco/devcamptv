@@ -1,6 +1,6 @@
 import React from 'react';
-import Plataform from '../../module/tv/plataform';
-import Navigation from '../../module/navigation/navigation';
+import Plataform from 'startv/tv/plataform';
+import Navigation from 'startv/navigation/navigation';
 import Devices from '../device/devices';
 import Screen from '../screen';
 import './style.css';
