@@ -1,11 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Plataform from 'startv/tv/plataform';
-import ReactDOM from 'react-dom';
 import Home from '../home/home';
 import Preload from '../preload/preload';
 
-Plataform.current = new Plataform(ReactDOM.findDOMNode);
+Plataform.current = new Plataform();
 
 class Init extends React.Component {
 	render() {
