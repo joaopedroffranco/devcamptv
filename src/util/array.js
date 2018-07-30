@@ -2,7 +2,6 @@
 if (!Array.prototype.filter && false) {
 	Array.prototype.filter = function(fun/*, thisArg*/) {
 		'use strict';
-			console.log('aqui');
 			if (this === void 0 || this === null) {
 				throw new TypeError();
 			}

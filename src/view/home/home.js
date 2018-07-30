@@ -11,8 +11,6 @@ class Home extends Screen {
 
 		this.onReturn = this.onReturn.bind(this);
 		this.onExit = this.onExit.bind(this);
-
-		this.devicesComponent = React.createRef();
 	}
 
 	componentDidMount() {
@@ -25,7 +23,7 @@ class Home extends Screen {
 
 	updateNavigation() {
 		if (this.devicesComponent) {
-			const elements = this.devicesComponent.current.devicesRefs;
+			const elements = this.devicesComponent ? this.devicesComponent.devicesRefs : [];
 			Plataform.current.navigation.update([elements])
 			Plataform.current.navigation.focus();
 		}
@@ -36,7 +34,7 @@ class Home extends Screen {
 			<div className="home-container">
 				<p>Olá, nós fazemos app para SmartTVs</p>
 				<Devices
-					ref={this.devicesComponent}
+					ref={(ref) => { this.devicesComponent = ref}}
 					updateNavigation={this.updateNavigation.bind(this)}
 				/>
 			</div>

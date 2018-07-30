@@ -11,7 +11,6 @@ Plataform.current = new Plataform();
 
 class Init extends React.Component {
 	render() {
-		console.log('aaa');
 		return (
 			<div>
 				<Preload />

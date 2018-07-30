@@ -16,14 +16,14 @@ class Device extends React.Component {
         const buttonIsOn = on ? 'on' : 'off';
 
 		return (
-            <div className={`device-container ${buttonIsOn}`}>
+            <button
+                className={`device-button`}
+                ref={navigationref}
+                onClick={() => { this.toggle(device); }}
+            >
                 <p>{name}</p>
-			    <button
-                    ref={navigationref}
-                    className="device-button"
-                    onClick={() => { this.toggle(device); }}
-                />
-            </div>
+                <div className={`device-toggle ${buttonIsOn}`} />
+            </button>
 		);
 	}
 }

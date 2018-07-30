@@ -10,7 +10,6 @@ class Track {
     }
     
     update(elements) {
-		console.log(elements);
 		this.groups = Array(elements.length);
 		this.parent = null;
 		elements.forEach((elementsGroup, index) => {

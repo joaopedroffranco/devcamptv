@@ -4,42 +4,41 @@
 }
 
 /* Device */
-.device-container {
+.device-button {
     display: inline-block;
     background-color: rgb(87, 87, 87);
     margin: 20px;
     width: 200px;
     height: 200px;
-    text-align: center;
     border-radius: 50%;
     box-shadow: 3px 3px 10px #686767;
+    border: none;
+    height: 200px;
+    width: 200px;
 }
 
-.device-container > p {
-    font-family: 'Raleway';
-    font-size: 20px;
-    color: #fff;
-    margin-top: 25%;
-}
-
-.device-container:focus-within {
+.device-button:focus {
     transform: scale(1.2);
     background-color: #5f0f73;
 }
 
-.device-button {
-    background-color: transparent;
-    border: none;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 50px;
-    width: 50px;
+.device-button > p {
+    font-family: 'Raleway';
+    font-size: 20px;
+    color: #fff;
 }
 
-.on > .device-button {
+.device-button > .device-toggle {
+    background-repeat: no-repeat;
+    background-size: 30%;
+    height: 60px;
+    background-position: center;
+}
+
+.on {
     background-image: url('../../asset/icon/on.png');
 }
 
-.off > .device-button {
+.off {
     background-image: url('../../asset/icon/off.png');
 }
