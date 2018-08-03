@@ -30,6 +30,14 @@ class Devices {
 		FirebaseGateway.deviceOn(name)
 			.set(on);
 	}
+
+	static onAll() {
+		DevicesGateway.onAll();
+	}
+
+	static offAll() {
+		DevicesGateway.offAll();
+	}
 }
 
 export default Devices;

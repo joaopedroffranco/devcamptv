@@ -20,6 +20,7 @@
 .device-button:focus {
     transform: scale(1.2);
     background-color: #5f0f73;
+    outline: none;
 }
 
 .device-button > p {

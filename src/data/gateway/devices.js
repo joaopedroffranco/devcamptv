@@ -3,10 +3,10 @@ import mock from '../mock/devices';
 
 class Devices {
 	static api() {
-		const baseURL = 'http://api.sambavideos.sambatech.com/v1';
+		const baseURL = 'http://dextra-lights.appspot.com';
 
 		return axios.create({
-			baseURL: `${baseURL}/api/Devices`
+			baseURL: `${baseURL}`
 		});
 	}
 
@@ -15,6 +15,14 @@ class Devices {
 			resolve({ data: mock.examples });
 		});
 		// return Devices.api().get('/Devices');
+	}
+
+	static onAll() {
+		return Devices.api().get('/turn-on-all-lights');
+	}
+
+	static offAll() {
+		return Devices.api().get('/turn-off-all-lights');
 	}
 }
 
