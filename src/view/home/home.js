@@ -1,6 +1,7 @@
 import React from 'react';
 import Plataform from 'startv/tv/plataform';
 import Navigation from 'startv/navigation/navigation';
+import Track from 'startv/navigation/track';
 import Devices from '../device/devices';
 import Screen from '../screen';
 import './style.css';
@@ -14,7 +15,8 @@ class Home extends Screen {
 	}
 
 	componentDidMount() {
-		Plataform.current.navigation.set(this.onReturn, this.onExit, Navigation.types.horizontaltrack);
+		Plataform.current.navigation.set(this.onReturn, this.onExit);
+		Plataform.current.navigation.setType(new Track(0, Navigation.types.horizontaltrack, 0));
 	}
 
 	componentDidUpdate() {
@@ -22,11 +24,9 @@ class Home extends Screen {
 	}
 
 	updateNavigation() {
-		if (this.devicesComponent) {
-			const elements = this.devicesComponent ? this.devicesComponent.devicesRefs : [];
-			Plataform.current.navigation.update([elements])
-			Plataform.current.navigation.focus();
-		}
+		const elements = this.devicesComponent ? this.devicesComponent.devicesRefs : [];
+		Plataform.current.navigation.update([elements])
+		Plataform.current.navigation.focus();
 	}
 
 	render() {
