@@ -2,8 +2,23 @@ runtime: python27
 api_version: 1
 threadsafe: true
 handlers:
+
 - url: /
+  static_files: build/index.html
+  upload: build/index.html
+- url: /pc
+  static_files: build/index.html
+  upload: build/index.html
+- url: /tizen
+  static_files: build/index.html
+  upload: build/index.html
+- url: /tizen/.*
   static_files: build/index.html
   upload: build/index.html
 - url: /
   static_dir: build
+- url: /tizen.appcache
+  mime_type: text/cache-manifest
+  static_files: build/tizen.appcache
+  upload: build/tizen.appcache
+  expiration: "0m"
